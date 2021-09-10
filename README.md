@@ -42,7 +42,7 @@ Finally, the program will plot a histogram showing:
 
 * all ratings,
 * titled players,
-* GM, CM, FM, IM and FM ratings.
+* GM, CM, NM, IM and FM ratings.
 
 ![image](https://user-images.githubusercontent.com/63872314/132925572-25b0818d-c6f8-4640-a3c9-536c7a8af3e0.png)
 
