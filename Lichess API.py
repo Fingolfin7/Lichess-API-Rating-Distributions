@@ -82,6 +82,7 @@ def plotTeamRating(team_data, team_name="", variant=""):
                 gm_ratings.append(member[0])
 
     def hist_plot():
+        # Optimal number of bins in histogram by the Freedman–Diaconis rule
         h = 2 * get_IQR(ratings) * math.pow(len(ratings), -1 * (1 / 3))
         bin_count = math.ceil((max(ratings) - min(ratings)) / h)
 
