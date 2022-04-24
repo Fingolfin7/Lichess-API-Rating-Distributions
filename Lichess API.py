@@ -111,8 +111,13 @@ def plotTeamRating(team_data, team_name: str, variant: str):
 
 
 def main():
-    team_id = input("team-id: ")
-    varnt = input("variant: ").lower()
+    team_id = input("Team-id: ")
+    varnt = input("Enter Variant: ").capitalize()
+    variant_list = ["Classical", "Rapid", "Blitz", "Bullet", "Correspondence"]
+
+    while varnt not in variant_list:
+        print(f"Invalid Variant! Try: {str(variant_list)}")
+        varnt = input("Enter Variant: ").capitalize()
 
     data_list = [get_user_data(user, varnt) for user in team_members(team_id)]
 
