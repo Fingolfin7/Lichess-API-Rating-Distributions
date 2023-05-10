@@ -16,6 +16,7 @@ def team_members(name: str):
 
 
 def get_user_data(user: dict, variant: str):
+    print(f"Getting '{user}' data...")
     if variant in user['perfs']:
         variant_rating = user['perfs'][variant]['rating']
     else:
@@ -119,6 +120,7 @@ def main():
         print(f"Invalid Variant! Try: {str(variant_list)}")
         varnt = input("Enter Variant: ").capitalize()
 
+    print(team_members(team_id))
     data_list = [get_user_data(user, varnt) for user in team_members(team_id)]
 
     plotTeamRating(data_list, team_id, varnt)
