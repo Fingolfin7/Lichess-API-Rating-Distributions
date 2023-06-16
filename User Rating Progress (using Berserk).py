@@ -14,23 +14,27 @@ def get_user_progression(t_username: str, variant: str, t_client: berserk):
 
     for element in data:
         if element["name"].find(variant) != -1:
-
-            dates = [       # year       # day             # month
+            print(element['points'][0])
+            print(element['points'][-1])
+            dates = [       # year       # month            # day
                     datetime(int(x[0]), int(x[1]) + 1, int(x[2]), 0, 0).strftime('%m-%d-%Y')
                     for x in element["points"]
                     ]
-
+            print(dates[-1])
             user_progress = [x[3] for x in element["points"]]
-
+            print(user_progress[-1])
             contiguous_dates = []
             contiguous_progress = []
 
-            for i in range(len(dates) - 1):
-                in_between_dates = pd.date_range(start=dates[i], end=dates[i+1]).to_pydatetime().tolist()
-
-                for j in range(len(in_between_dates)):
+            for i in range(len(dates)):
+                if i == len(dates) - 1:
                     contiguous_progress.append(user_progress[i])
-                    contiguous_dates.append(in_between_dates[j].strftime('%m-%d-%Y'))
+                    contiguous_dates.append(dates[i])
+                else:
+                    in_between_dates = pd.date_range(start=dates[i], end=dates[i+1]).to_pydatetime().tolist()
+                    for j in range(len(in_between_dates)):
+                        contiguous_progress.append(user_progress[i])
+                        contiguous_dates.append(in_between_dates[j].strftime('%m-%d-%Y'))
 
             print(contiguous_dates)
             print(contiguous_progress)
