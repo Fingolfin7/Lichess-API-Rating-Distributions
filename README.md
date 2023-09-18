@@ -12,15 +12,15 @@ Simply enter the id of a team, as well as the game variant (i.e Classical, Rapid
 
 ## Getting the project
 
-Download the project or clone it with git. You can create a virtual environment if you can.
-Install the requisites by running
+Download the project or clone it with git. You can also create a virtual environment.
+Install the requirements by running
 
 ```
 pip install -r requirements.txt
 ```
 
 You will need to create a `personal-access-token.txt` file in the source folder and paste a Lichess Personal Access Token inside it. 
-You can generate a genius token [here](https://lichess.org/account/oauth/token)
+You can generate a token [here](https://lichess.org/account/oauth/token)
 
 
 ## Usage Example
